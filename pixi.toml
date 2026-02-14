@@ -2,7 +2,6 @@
 channels = [
   "https://prefix.dev/pixi-build-backends",
   "https://prefix.dev/conda-forge",
-  "https://prefix.dev/robostack-humble",
 ]
 platforms = ["linux-aarch64", "linux-64"]
 preview = ["pixi-build"]
@@ -14,9 +13,27 @@ navigator = "ros2 run navigator navigator"
 navigator_py = "ros2 run navigator_py navigator"
 start = "ros2 launch navigator turtlesim_demo.launch.xml"
 
-[dependencies]
-ros-humble-ros-core = ">=0.10.0,<0.11"
+[feature.humble]
+channels = ["https://prefix.dev/robostack-humble"]
+
+[feature.humble.dependencies]
+ros-humble-ros-core = "*"
 ros-humble-turtlesim = "*"
 ros-humble-navigator = { path = "src/navigator/package.xml" }
 ros-humble-navigator-py = { path = "src/navigator_py/package.xml" }
 ros-humble-talker-py = { path = "src/talker-py/package.xml" }
+
+[feature.jazzy]
+channels = ["https://prefix.dev/robostack-jazzy"]
+
+[feature.jazzy.dependencies]
+ros-jazzy-ros-core = "*"
+ros-jazzy-turtlesim = "*"
+ros-jazzy-navigator = { path = "src/navigator/package.xml" }
+ros-jazzy-navigator-py = { path = "src/navigator_py/package.xml" }
+ros-jazzy-talker-py = { path = "src/talker-py/package.xml" }
+
+[environments]
+default = { features = ["humble"], solve-group = "humble" }
+humble = { features = ["humble"], solve-group = "humble" }
+jazzy = { features = ["jazzy"], solve-group = "jazzy" }
