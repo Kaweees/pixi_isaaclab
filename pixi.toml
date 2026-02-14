@@ -1,8 +1,8 @@
 [workspace]
 channels = [
-    "https://prefix.dev/pixi-build-backends",
-    "https://prefix.dev/conda-forge",
-    "https://prefix.dev/robostack-humble",
+  "https://prefix.dev/pixi-build-backends",
+  "https://prefix.dev/conda-forge",
+  "https://prefix.dev/robostack-humble",
 ]
 platforms = ["linux-aarch64", "linux-64"]
 preview = ["pixi-build"]

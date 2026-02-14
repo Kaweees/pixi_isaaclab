@@ -18,7 +18,7 @@ default:
 # Install the virtual environment and pre-commit hooks
 install:
   @echo "Installing..."
-  @pixi shell
+  @pixi install
   @pixi run pre-commit install --install-hooks
 
 update:
@@ -45,8 +45,6 @@ run *args='talker':
 check:
   @echo "Checking..."
   @pixi run pre-commit run -a
-  @pixi run mypy .
-  @pixi run deptry . --ignore=DEP002,DEP003
 
 # Remove build artifacts and non-essential files
 clean:

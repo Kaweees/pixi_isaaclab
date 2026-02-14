@@ -12,6 +12,7 @@ pkgs.mkShell {
 
   shellHook = ''
     export TMPDIR=/tmp
+    eval "$(pixi shell-hook)"
     just install
   '';
 }
