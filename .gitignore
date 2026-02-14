@@ -1,0 +1,19 @@
+# pixi environments
+.pixi
+*.egg-info
+files.txt
+pixi-build-debug
+
+*.pyc
+
+.vscode
+
+output
+build
+install
+log
+
+.DS_Store
+
+# Profiling
+profile.json.gz
