@@ -4,7 +4,7 @@ channels = [
     "https://prefix.dev/conda-forge",
     "https://prefix.dev/robostack-humble",
 ]
-platforms = ["linux-aarch64"]
+platforms = ["linux-aarch64", "linux-64"]
 preview = ["pixi-build"]
 
 [tasks]
